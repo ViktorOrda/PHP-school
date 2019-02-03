@@ -55,26 +55,25 @@ if (isset($sld)) {
 }
 
 if (array_key_exists('port', $url_array)) {
-    $port = $url_array['port'];
-    echo 'Port:' . $port . PHP_EOL;
+    echo 'Port: ' . $url_array['port'] . PHP_EOL;
 }
 
 if (array_key_exists('user', $url_array)) {
-    $user = $url_array['user'];
-    echo 'User:' . $user . PHP_EOL;
+    echo 'User: ' . $url_array['user'] . PHP_EOL;
 }
 
 if (array_key_exists('pass', $url_array)) {
-    $password = $url_array['pass'];
-    echo 'Password:' . $password . PHP_EOL;
+    echo 'Password: ' . $url_array['pass'] . PHP_EOL;
 }
 
 if (array_key_exists('path', $url_array)) {
     $path = $url_array['path'];
-    $path_elements = explode('.',$path);
-    $extension = end($path_elements);
     echo 'Path:' . $path . PHP_EOL;
-    echo 'Extension: ' . $extension . PHP_EOL;
+    if (strpos($path, '.') !== false ) {
+        $path_elements = explode('.',$path);
+        $extension = end($path_elements);
+        echo 'Extension: ' . $extension . PHP_EOL;
+    }
 }
 
 if (array_key_exists('query', $url_array)) {
@@ -91,6 +90,5 @@ if (array_key_exists('query', $url_array)) {
 }
 
 if (array_key_exists('fragment', $url_array)) {
-    $fragment = $url_array['fragment'];
-    echo 'Fragment: ' . $fragment . PHP_EOL;
+    echo 'Fragment: ' . $url_array['fragment'] . PHP_EOL;
 }
