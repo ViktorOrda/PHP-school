@@ -16,5 +16,5 @@ function bubbleSort(&$arr, $length)
     }
 }
 
-bubblesort($arr,$length);
+bubbleSort($arr,$length);
 echo json_encode($arr);
