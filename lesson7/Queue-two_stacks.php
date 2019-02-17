@@ -15,14 +15,6 @@ class Stack
         return $this->top === 0;
     }
 
-    public function getLast()
-    {
-        if ($this->isEmpty()) {
-            exit('Stack is empty!');
-        }
-        return $this->storage[$this->top - 1];
-    }
-
     public function remove()
     {
         if ($this->isEmpty()) {
