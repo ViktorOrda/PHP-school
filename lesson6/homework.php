@@ -26,13 +26,21 @@ class Student {
             $this->status = $Status;
         }
 
-        if (!is_numeric($Gpa) || $Gpa < 0 || $Gpa > 4) {
+        if (!Student::isValidGPA($Gpa)) {
             throw new RuntimeException('Error! GPA value should be number from 0 to 4!'.PHP_EOL);
         } else {
             $this->gpa = $Gpa;
         }
     }
 
+    private static function isValidGPA($value)
+    {
+        if (!is_numeric($value) || $value < 0 || $value > 4) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public function showMyself()
     {
         echo 'FirstName: ' . $this->firstName . PHP_EOL;
