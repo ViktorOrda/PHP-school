@@ -1,7 +1,7 @@
 <?php
 //exercise 1
 class Student {  
-    private const VALID_STATUS = ['freshman', 'sophomore', 'junior', 'senior'];
+    private const VALID_STATUSES = ['freshman', 'sophomore', 'junior', 'senior'];
 
     private $firstName;
     private $lastName;
@@ -20,7 +20,7 @@ class Student {
             $this->gender = $Gender;
         }
 
-        if (!in_array($Status, Student::VALID_STATUS)) {
+        if (!in_array($Status, Student::VALID_STATUSES)) {
             throw new RuntimeException('You\'ve entered incorrect status!'.PHP_EOL);
         } else {
             $this->status = $Status;
