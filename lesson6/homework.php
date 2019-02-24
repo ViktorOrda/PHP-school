@@ -15,19 +15,19 @@ class Student {
         $this->lastName = $LastName;
 
         if ($Gender !== 'male' && $Gender !== 'female') {
-            exit('You\'ve entered incorrect gender!'.PHP_EOL);
+            throw new RuntimeException('You\'ve entered incorrect gender!'.PHP_EOL);
         } else {
             $this->gender = $Gender;
         }
 
         if (!in_array($Status, Student::VALID_STATUS)) {
-            exit('You\'ve entered incorrect status!'.PHP_EOL);
+            throw new RuntimeException('You\'ve entered incorrect status!'.PHP_EOL);
         } else {
             $this->status = $Status;
         }
 
         if (!is_numeric($Gpa) || $Gpa < 0 || $Gpa > 4) {
-            exit('Error! GPA value should be number from 0 to 4!'.PHP_EOL);
+            throw new RuntimeException('Error! GPA value should be number from 0 to 4!'.PHP_EOL);
         } else {
             $this->gpa = $Gpa;
         }
@@ -45,7 +45,7 @@ class Student {
     public function studyTime($time)
     {
         if (!is_numeric($time) || $time <= 0) {
-            exit('Error! Study time should be positive number');
+            throw new RuntimeException('Error! Study time should be positive number');
         }
         $this->gpa + log($time) > 4 ? $this->gpa = 4.0 : $this->gpa += log($time);
     }
