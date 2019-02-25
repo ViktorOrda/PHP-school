@@ -137,8 +137,6 @@ class LinkedList
                 $Element = $Element->getNext();    
             }
             $output .= $Element->getValue();
-            //$lastElement->setNext($newElement);
-           // $newElement->setPrevious($lastElement);
            return $output.PHP_EOL;
         }
         return '';        
